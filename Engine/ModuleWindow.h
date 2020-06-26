@@ -14,12 +14,12 @@ public:
 	~ModuleWindow() override;
 
 	bool Init() override;
-
 	update_status Update() override;
-
 	bool Delete() override;
 
 	GLFWwindow* GetWindow() const;
+
+	void CreateTriangle();
 
 private:
 	GLFWwindow* window;

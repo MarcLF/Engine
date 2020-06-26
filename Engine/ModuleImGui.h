@@ -1,13 +1,12 @@
 #pragma once
 
-#include "Globals.h"
 #include "Module.h"
 
-class ModuleInput : public Module
+class ModuleImGui : public Module
 {
 public:
-	ModuleInput();
-	~ModuleInput();
+	ModuleImGui();
+	~ModuleImGui();
 
 	bool Init() override;
 	update_status Update() override;

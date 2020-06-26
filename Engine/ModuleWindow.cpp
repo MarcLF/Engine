@@ -23,7 +23,7 @@ bool ModuleWindow::Init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(800, 600, "3D Engine", NULL, NULL);
+	window = glfwCreateWindow(800, 600, "Game Engine", NULL, NULL);
 
 	assert (window != nullptr && "Failed to create GLFW window \n");
 
@@ -74,4 +74,19 @@ GLFWwindow* ModuleWindow::GetWindow() const
 	OutputDebugString(__FUNCSIG__ "\n");
 
 	return window;
+}
+
+void ModuleWindow::CreateTriangle()
+{
+	float vertices[] = {
+	-0.5f, -0.5f, 0.0f,
+	 0.5f, -0.5f, 0.0f,
+	 0.0f,  0.5f, 0.0f
+	};
+
+	unsigned int VBO;
+
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 }
