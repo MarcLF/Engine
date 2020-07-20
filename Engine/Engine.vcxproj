@@ -72,12 +72,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>C:\Users\marcl\source\libs\OpenGL;$(LibraryPath)</LibraryPath>
     <IncludePath>C:\Users\marcl\source\includes;$(IncludePath)</IncludePath>
-    <OutDir>.</OutDir>
+    <OutDir>.\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>C:\Users\marcl\source\includes;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\marcl\source\libs\OpenGL;$(LibraryPath)</LibraryPath>
-    <OutDir>.</OutDir>
+    <OutDir>.\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -143,6 +143,7 @@
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="ModuleImGui.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
+    <ClCompile Include="ModuleOpenGLTests.cpp" />
     <ClCompile Include="ModuleWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="Module.h" />
     <ClInclude Include="ModuleImGui.h" />
     <ClInclude Include="ModuleInput.h" />
+    <ClInclude Include="ModuleOpenGLTests.h" />
     <ClInclude Include="ModuleWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

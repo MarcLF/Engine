@@ -5,6 +5,7 @@
 
 class ModuleWindow;
 class ModuleInput;
+class ModuleOpenGLTests;
 
 class Application
 {
@@ -24,6 +25,7 @@ private:
 public:
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
+	ModuleOpenGLTests* openGLTests = nullptr;
 };
 
 extern Application* App;

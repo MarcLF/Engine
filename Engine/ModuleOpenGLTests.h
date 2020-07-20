@@ -3,23 +3,19 @@
 #include "Globals.h"
 #include "Module.h"
 
-#include <string>
 #include <Glad/glad.h>
 #include <GLFW/glfw3.h>
 
-class ModuleWindow : public Module
+class ModuleOpenGLTests : public Module
 {
 public:
-	ModuleWindow();
-	~ModuleWindow() override;
+	ModuleOpenGLTests();
+	~ModuleOpenGLTests() override;
 
 	bool Init() override;
 	update_status Update() override;
 	bool Delete() override;
 
-	GLFWwindow* GetWindow() const;
-
-private:
-	GLFWwindow* window;
+	void CreateTriangle();
 };
 

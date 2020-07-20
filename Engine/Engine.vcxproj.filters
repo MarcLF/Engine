@@ -78,6 +78,9 @@
     <ClCompile Include="ModuleImGui.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="ModuleOpenGLTests.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="ModuleImGui.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleOpenGLTests.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
   </ItemGroup>

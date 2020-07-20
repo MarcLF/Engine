@@ -2,11 +2,13 @@
 
 #include "ModuleWindow.h"
 #include "ModuleInput.h"
+#include "ModuleOpenGLTests.h"
 
 Application::Application()
 {
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(input = new ModuleInput());
+	modules.push_back(openGLTests = new ModuleOpenGLTests());
 }
 
 Application::~Application()
