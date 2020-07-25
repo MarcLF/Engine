@@ -3,6 +3,8 @@
 #include "Globals.h"
 #include "Module.h"
 
+#include <vector>
+
 #include <Glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -17,5 +19,12 @@ public:
 	bool Delete() override;
 
 	void CreateTriangle();
+	void CheckShadersCompilation();
+
+private:
+	const char *vertexShaderSource;
+	const char *fragmentShaderSource;
+
+	std::vector<unsigned int> shaders;
 };
 
