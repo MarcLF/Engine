@@ -19,6 +19,8 @@ public:
 	bool Delete() override;
 
 	void CreateTriangle();
+	void CreateShaders();
+	void Draw();
 	void CheckShadersCompilation();
 
 private:
@@ -26,5 +28,9 @@ private:
 	const char *fragmentShaderSource;
 
 	std::vector<unsigned int> shaders;
+
+	unsigned int VAO;
+	unsigned int VBO;
+	unsigned int shaderProgram;
 };
 
