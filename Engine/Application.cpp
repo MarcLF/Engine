@@ -3,12 +3,14 @@
 #include "ModuleWindow.h"
 #include "ModuleInput.h"
 #include "ModuleOpenGLTests.h"
+#include "ModuleImGui.h"
 
 Application::Application()
 {
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(input = new ModuleInput());
 	modules.push_back(openGLTests = new ModuleOpenGLTests());
+	modules.push_back(imgui = new ModuleImGui());
 }
 
 Application::~Application()

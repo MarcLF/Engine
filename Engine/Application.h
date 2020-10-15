@@ -6,6 +6,7 @@
 class ModuleWindow;
 class ModuleInput;
 class ModuleOpenGLTests;
+class ModuleImGui;
 
 class Application
 {
@@ -26,6 +27,7 @@ public:
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
+	ModuleImGui* imgui = nullptr;
 };
 
 extern Application* App;

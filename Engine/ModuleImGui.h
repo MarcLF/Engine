@@ -2,6 +2,8 @@
 
 #include "Module.h"
 
+class ModuleWindow;
+
 class ModuleImGui : public Module
 {
 public:
