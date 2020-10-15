@@ -23,7 +23,7 @@ bool ModuleInput::Init()
 
 update_status ModuleInput::Update()
 {
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 bool ModuleInput::Delete()

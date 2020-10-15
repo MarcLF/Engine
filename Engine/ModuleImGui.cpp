@@ -18,7 +18,7 @@ bool ModuleImGui::Init()
 
 update_status ModuleImGui::Update()
 {
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 bool ModuleImGui::Delete()

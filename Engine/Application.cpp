@@ -29,9 +29,9 @@ bool Application::Init()
 
 update_status Application::Update()
 {
-	update_status ret = UPDATE_CONTINUE;
+	update_status ret = update_status::UPDATE_CONTINUE;
 
-	for (std::list<Module*>::iterator it = modules.begin(); it != modules.end() && ret == UPDATE_CONTINUE; it++)
+	for (std::list<Module*>::iterator it = modules.begin(); it != modules.end() && ret == update_status::UPDATE_CONTINUE; it++)
 	{
 		ret = (*it)->Update();
 	}

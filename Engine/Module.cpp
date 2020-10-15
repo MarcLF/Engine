@@ -14,17 +14,17 @@ bool Module::Init()
 
 update_status Module::PreUpdate() 
 {
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 update_status Module::Update()
 {
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 update_status Module::PostUpdate()
 {
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 bool Module::Delete()

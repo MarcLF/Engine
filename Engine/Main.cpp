@@ -45,9 +45,9 @@ int main(int argc, char ** argv)
 
 			case ENGINE_UPDATE:
 			{
-				int update_return = App->Update();
+				update_status update_return = App->Update();
 
-				if (update_return == UPDATE_STOP)
+				if (update_return == update_status::UPDATE_STOP)
 				{
 					state = ENGINE_FINISH;
 				}

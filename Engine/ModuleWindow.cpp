@@ -51,13 +51,13 @@ update_status ModuleWindow::Update()
 	{
 		OutputDebugString("Update Stop\n");
 
-		return UPDATE_STOP;
+		return update_status::UPDATE_STOP;
 	}
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
 
-	return UPDATE_CONTINUE;
+	return update_status::UPDATE_CONTINUE;
 }
 
 bool ModuleWindow::Delete()
