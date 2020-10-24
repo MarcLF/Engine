@@ -1,4 +1,4 @@
-#include "ModuleWindow.h"
+#include "Modules/Includes/ModuleWindow.h"
 
 #include <Windows.h>
 
@@ -25,7 +25,7 @@ bool ModuleWindow::Init()
 
 	window = glfwCreateWindow(800, 600, "Game Engine", NULL, NULL);
 
-	assert (window != nullptr && "Failed to create GLFW window \n");
+	assert(window != nullptr && "Failed to create GLFW window \n");
 
 	glfwMakeContextCurrent(window);
 

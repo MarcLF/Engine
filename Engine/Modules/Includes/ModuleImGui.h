@@ -15,6 +15,6 @@ public:
 	bool Delete() override;
 
 private:
-	ImGuiIO *io;
+	ImGuiIO* io;
 };
 

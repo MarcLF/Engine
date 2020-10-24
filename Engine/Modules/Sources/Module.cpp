@@ -1,18 +1,19 @@
-#include "Module.h"
-
+#include "Modules/Includes/Module.h"
 
 Module::Module(std::string name_) : name(name_)
-{}
+{
+}
 
 Module::~Module()
-{}
+{
+}
 
-bool Module::Init() 
+bool Module::Init()
 {
 	return true;
 }
 
-update_status Module::PreUpdate() 
+update_status Module::PreUpdate()
 {
 	return update_status::UPDATE_CONTINUE;
 }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <list>
-#include "Module.h"
+#include "Modules/Includes/Module.h"
 
 class ModuleWindow;
 class ModuleInput;

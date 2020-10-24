@@ -1,7 +1,7 @@
-#include "ModuleInput.h"
+#include "Modules/Includes/ModuleInput.h"
 
 #include "Application.h"
-#include "ModuleWindow.h"
+#include "Modules/Includes/ModuleWindow.h"
 
 #include <Windows.h>
 

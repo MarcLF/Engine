@@ -18,8 +18,7 @@ int main(int argc, char ** argv)
 	int main_return = EXIT_FAILURE;
 	engine_states state = ENGINE_CREATION;
 
-	while (state != ENGINE_EXIT) 
-	{
+	while (state != ENGINE_EXIT) {
 		switch (state)
 		{
 			case ENGINE_CREATION:
@@ -47,14 +46,14 @@ int main(int argc, char ** argv)
 			{
 				update_status update_return = App->Update();
 
-				if (update_return == update_status::UPDATE_STOP)
+				if (update_return == update_status::UPDATE_STOP) 
 				{
 					state = ENGINE_FINISH;
 				}
 			}
 			break;
 
-			case ENGINE_FINISH:
+			case ENGINE_FINISH: 
 			{
 				App->Delete();
 

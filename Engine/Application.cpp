@@ -1,9 +1,9 @@
 #include "Application.h"
 
-#include "ModuleWindow.h"
-#include "ModuleInput.h"
-#include "ModuleOpenGLTests.h"
-#include "ModuleImGui.h"
+#include "Modules/Includes/ModuleWindow.h"
+#include "Modules/Includes/ModuleInput.h"
+#include "Modules/Includes/ModuleOpenGLTests.h"
+#include "Modules/Includes/ModuleImGui.h"
 
 Application::Application()
 {

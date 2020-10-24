@@ -24,8 +24,8 @@ public:
 	void CheckShadersCompilation();
 
 private:
-	const char *vertexShaderSource;
-	const char *fragmentShaderSource;
+	const char* vertexShaderSource;
+	const char* fragmentShaderSource;
 
 	std::vector<unsigned int> shaders;
 
