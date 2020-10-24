@@ -7,10 +7,12 @@
 
 ModuleImGui::ModuleImGui() : Module("ModuleImGui")
 {
+    io = nullptr;
 }
 
 ModuleImGui::~ModuleImGui()
 {
+    delete io;
 }
 
 bool ModuleImGui::Init()
@@ -18,7 +20,11 @@ bool ModuleImGui::Init()
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io = &ImGui::GetIO(); 
+    (void)io;
+
+    ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
@@ -39,8 +45,21 @@ update_status ModuleImGui::Update()
     ImGui::Text("This is some useful text.");
     ImGui::End();
 
+    ImGui::Begin("Hello, world! 2");
+    ImGui::Text("This is some useful text.");
+    ImGui::End();
+
 	ImGui::Render();
+
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+    if (io->ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+    {
+        GLFWwindow* backup_current_context = glfwGetCurrentContext();
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+        glfwMakeContextCurrent(backup_current_context);
+    }
 
 	return update_status::UPDATE_CONTINUE;
 }

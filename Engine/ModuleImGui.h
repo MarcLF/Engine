@@ -2,7 +2,7 @@
 
 #include "Module.h"
 
-class ModuleWindow;
+class ImGuiIO;
 
 class ModuleImGui : public Module
 {
@@ -13,5 +13,8 @@ public:
 	bool Init() override;
 	update_status Update() override;
 	bool Delete() override;
+
+private:
+	ImGuiIO *io;
 };
 
