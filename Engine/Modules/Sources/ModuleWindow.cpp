@@ -2,7 +2,6 @@
 
 #include <Windows.h>
 
-
 ModuleWindow::ModuleWindow() : Module("ModuleWindow")
 {
 	window = nullptr;
@@ -23,7 +22,7 @@ bool ModuleWindow::Init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(800, 600, "Game Engine", NULL, NULL);
+	window = glfwCreateWindow(1000, 700, "Game Engine", NULL, NULL);
 
 	assert(window != nullptr && "Failed to create GLFW window \n");
 

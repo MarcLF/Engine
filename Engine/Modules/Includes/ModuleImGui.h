@@ -2,7 +2,7 @@
 
 #include "Module.h"
 
-class ImGuiIO;
+struct ImGuiIO;
 
 class ModuleImGui : public Module
 {

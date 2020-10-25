@@ -81,6 +81,12 @@
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Modules\Sources\ModuleShaderLoader.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -126,6 +132,12 @@
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
     <ClInclude Include="Modules\Includes\ModuleWindow.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Includes\ModuleShaderLoader.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Includes\ModuleTraceSystem.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
   </ItemGroup>

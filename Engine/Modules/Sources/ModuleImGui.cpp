@@ -2,6 +2,7 @@
 
 #include "Application.h"
 #include "Modules/Includes/ModuleWindow.h"
+#include "Modules/Includes/ModuleTraceSystem.h"
 
 #include "ImGui/imgui.h"
 
@@ -42,10 +43,6 @@ update_status ModuleImGui::Update()
 	ImGui::NewFrame();
 
 	ImGui::Begin("Hello, world!");
-	ImGui::Text("This is some useful text.");
-	ImGui::End();
-
-	ImGui::Begin("Hello, world! 2");
 	ImGui::Text("This is some useful text.");
 	ImGui::End();
 
