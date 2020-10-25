@@ -169,6 +169,10 @@
     <ClInclude Include="Modules\Includes\ModuleTraceSystem.h" />
     <ClInclude Include="Modules\Includes\ModuleWindow.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\fragment_shader.frag" />
+    <None Include="Shaders\vertex_shader.vert" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

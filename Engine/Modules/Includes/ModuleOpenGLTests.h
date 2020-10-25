@@ -8,6 +8,8 @@
 #include <Glad/glad.h>
 #include <GLFW/glfw3.h>
 
+class ModuleShaderLoader;
+
 class ModuleOpenGLTests : public Module
 {
 public:
@@ -19,19 +21,16 @@ public:
 	bool Delete() override;
 
 	void CreateTriangle();
-	void CreateShaders();
 	void Draw();
-	void CheckShadersCompilation();
 
 private:
-	const char* vertexShaderSource;
-	const char* fragmentShaderSource;
-
 	std::vector<unsigned int> shaders;
 
 	unsigned int VAO;
 	unsigned int VBO;
 	unsigned int EBO;
 	unsigned int shaderProgram;
+
+	ModuleShaderLoader* mainShader;
 };
 
