@@ -8,7 +8,7 @@
 #include <Glad/glad.h>
 #include <GLFW/glfw3.h>
 
-class ModuleShaderLoader;
+class ModuleShader;
 
 class ModuleOpenGLTests : public Module
 {
@@ -29,6 +29,6 @@ private:
 	unsigned int EBO;
 	unsigned int shaderProgram;
 
-	ModuleShaderLoader* mainShader;
+	ModuleShader* mainShader;
 };
 

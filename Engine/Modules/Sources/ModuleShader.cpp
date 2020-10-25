@@ -1,31 +1,31 @@
-#include "Modules/Includes/ModuleShaderLoader.h"
+#include "Modules/Includes/ModuleShader.h"
 
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 
-ModuleShaderLoader::ModuleShaderLoader() : Module("ModuleShaderLoader")
+ModuleShader::ModuleShader() : Module("ModuleShader")
 {
 	programID = 0;
 }
 
-ModuleShaderLoader::~ModuleShaderLoader()
+ModuleShader::~ModuleShader()
 {
 	glDeleteProgram(programID);
 }
 
-bool ModuleShaderLoader::Init()
+bool ModuleShader::Init()
 {
 	return true;
 }
 
-bool ModuleShaderLoader::Delete()
+bool ModuleShader::Delete()
 {
 	return true;
 }
 
-void ModuleShaderLoader::LoadShader(const char* vertexPath, const char* fragmentPath)
+void ModuleShader::LoadShader(const char* vertexPath, const char* fragmentPath)
 {
 	// 1. retrieve the vertex/fragment source code from filePath
 	std::ifstream vShaderFile;
@@ -60,7 +60,7 @@ void ModuleShaderLoader::LoadShader(const char* vertexPath, const char* fragment
 	}
 }
 
-void ModuleShaderLoader::CompileShader()
+void ModuleShader::CompileShader()
 {
 	const char* vShaderCode;
 	const char* fShaderCode;
@@ -117,20 +117,20 @@ void ModuleShaderLoader::CompileShader()
 	glDeleteShader(fragment);
 }
 
-void ModuleShaderLoader::Use()
+void ModuleShader::Use()
 {
 	glUseProgram(programID);
 }
 
-void ModuleShaderLoader::SetBool(const std::string& name, bool value) const
+void ModuleShader::SetBool(const std::string& name, bool value) const
 {
 	glUniform1i(glGetUniformLocation(programID, name.c_str()), (int)value);
 }
-void ModuleShaderLoader::SetInt(const std::string& name, int value) const
+void ModuleShader::SetInt(const std::string& name, int value) const
 {
 	glUniform1i(glGetUniformLocation(programID, name.c_str()), value);
 }
-void ModuleShaderLoader::SetFloat(const std::string& name, float value) const
+void ModuleShader::SetFloat(const std::string& name, float value) const
 {
 	glUniform1f(glGetUniformLocation(programID, name.c_str()), value);
 }

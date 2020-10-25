@@ -6,7 +6,7 @@
 class ModuleTraceSystem;
 class ModuleWindow;
 class ModuleInput;
-class ModuleShaderLoader;
+class ModuleShader;
 class ModuleOpenGLTests;
 class ModuleImGui;
 
@@ -29,7 +29,7 @@ public:
 	ModuleTraceSystem* traceSystem = nullptr;
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
-	ModuleShaderLoader* shaderLoader = nullptr;
+	ModuleShader* shaderLoader = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
 	ModuleImGui* imgui = nullptr;
 };

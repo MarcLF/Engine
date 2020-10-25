@@ -81,10 +81,10 @@
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Modules\Sources\ModuleShaderLoader.cpp">
+    <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp">
+    <ClCompile Include="Modules\Sources\ModuleShader.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,10 +134,10 @@
     <ClInclude Include="Modules\Includes\ModuleWindow.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Modules\Includes\ModuleShaderLoader.h">
+    <ClInclude Include="Modules\Includes\ModuleTraceSystem.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Modules\Includes\ModuleTraceSystem.h">
+    <ClInclude Include="Modules\Includes\ModuleShader.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
   </ItemGroup>

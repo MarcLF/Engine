@@ -4,11 +4,11 @@
 
 #include <glad/glad.h>
 
-class ModuleShaderLoader : public Module
+class ModuleShader : public Module
 {
 public:
-	ModuleShaderLoader();
-	~ModuleShaderLoader();
+	ModuleShader();
+	~ModuleShader();
 
 	bool Init() override;
 	bool Delete() override;

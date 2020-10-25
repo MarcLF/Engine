@@ -1,6 +1,6 @@
 #include "Modules/Includes/ModuleOpenGLTests.h"
 
-#include "Modules/Includes/ModuleShaderLoader.h"
+#include "Modules/Includes/ModuleShader.h"
 #include <iostream>
 
 ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
@@ -10,7 +10,7 @@ ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
 	EBO = NULL;
 	shaderProgram = NULL;
 
-	mainShader = new ModuleShaderLoader();
+	mainShader = new ModuleShader();
 }
 
 ModuleOpenGLTests::~ModuleOpenGLTests()

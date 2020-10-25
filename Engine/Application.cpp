@@ -3,7 +3,7 @@
 #include "Modules/Includes/ModuleTraceSystem.h"
 #include "Modules/Includes/ModuleWindow.h"
 #include "Modules/Includes/ModuleInput.h"
-#include "Modules/Includes/ModuleShaderLoader.h"
+#include "Modules/Includes/ModuleShader.h"
 #include "Modules/Includes/ModuleOpenGLTests.h"
 #include "Modules/Includes/ModuleImGui.h"
 
@@ -12,7 +12,7 @@ Application::Application()
 	modules.push_back(traceSystem = new ModuleTraceSystem());
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(input = new ModuleInput());
-	modules.push_back(shaderLoader = new ModuleShaderLoader());
+	modules.push_back(shaderLoader = new ModuleShader());
 	modules.push_back(openGLTests = new ModuleOpenGLTests());
 	modules.push_back(imgui = new ModuleImGui());
 }

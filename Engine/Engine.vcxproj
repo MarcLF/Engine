@@ -146,7 +146,7 @@
     <ClCompile Include="Modules\Sources\ModuleImGui.cpp" />
     <ClCompile Include="Modules\Sources\ModuleInput.cpp" />
     <ClCompile Include="Modules\Sources\ModuleOpenGLTests.cpp" />
-    <ClCompile Include="Modules\Sources\ModuleShaderLoader.cpp" />
+    <ClCompile Include="Modules\Sources\ModuleShader.cpp" />
     <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp" />
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp" />
   </ItemGroup>
@@ -165,7 +165,7 @@
     <ClInclude Include="Modules\Includes\ModuleImGui.h" />
     <ClInclude Include="Modules\Includes\ModuleInput.h" />
     <ClInclude Include="Modules\Includes\ModuleOpenGLTests.h" />
-    <ClInclude Include="Modules\Includes\ModuleShaderLoader.h" />
+    <ClInclude Include="Modules\Includes\ModuleShader.h" />
     <ClInclude Include="Modules\Includes\ModuleTraceSystem.h" />
     <ClInclude Include="Modules\Includes\ModuleWindow.h" />
   </ItemGroup>
