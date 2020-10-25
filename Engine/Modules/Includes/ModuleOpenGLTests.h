@@ -24,8 +24,6 @@ public:
 	void Draw();
 
 private:
-	std::vector<unsigned int> shaders;
-
 	unsigned int VAO;
 	unsigned int VBO;
 	unsigned int EBO;
