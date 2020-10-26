@@ -1,6 +1,6 @@
 #include "Modules/Includes/ModuleOpenGLTests.h"
 
-#include "Modules/Includes/ModuleShader.h"
+#include "Components/Shader.h"
 #include <iostream>
 
 ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
@@ -10,7 +10,7 @@ ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
 	EBO = NULL;
 	shaderProgram = NULL;
 
-	mainShader = new ModuleShader();
+	mainShader = new Shader();
 }
 
 ModuleOpenGLTests::~ModuleOpenGLTests()
@@ -59,6 +59,13 @@ void ModuleOpenGLTests::CreateTriangle()
 	{
 	0, 1, 2,
 	1, 3, 2
+	};
+
+	float texCoords[] = {
+	0.0f, 0.0f,  // lower-left corner  
+	1.0f, 0.0f,  // lower-right corner
+	0.0f, 1.0f,  // top-left corner
+	1.0f, 1.0f   // top-right corner
 	};
 
 	glGenVertexArrays(1, &VAO);

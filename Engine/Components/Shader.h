@@ -1,17 +1,13 @@
 #pragma once
 
-#include "Module.h"
-
 #include <glad/glad.h>
+#include <string>
 
-class ModuleShader : public Module
+class Shader
 {
 public:
-	ModuleShader();
-	~ModuleShader();
-
-	bool Init() override;
-	bool Delete() override;
+	Shader();
+	~Shader();
 
 	void LoadShader(const char* vertexPath, const char* fragmentPath);
 	void CompileShader();

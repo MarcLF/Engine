@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Application.h"
-#include "Globals.h"
+#include "Core/Application.h"
+#include "Core/Globals.h"
 
 Application* App = nullptr;
 
@@ -13,53 +13,54 @@ enum engine_states
 	ENGINE_EXIT
 };
 
-int main(int argc, char ** argv) 
+int main(int argc, char** argv)
 {
 	int main_return = EXIT_FAILURE;
 	engine_states state = ENGINE_CREATION;
 
-	while (state != ENGINE_EXIT) {
+	while (state != ENGINE_EXIT)
+	{
 		switch (state)
 		{
-			case ENGINE_CREATION:
-			{
-				App = new Application();
+		case ENGINE_CREATION:
+		{
+			App = new Application();
 
-				state = ENGINE_START;
-			} 
-			break;
+			state = ENGINE_START;
+		}
+		break;
 
-			case ENGINE_START:
+		case ENGINE_START:
+		{
+			if (App->Init() == false)
 			{
-				if (App->Init() == false)
-				{
-					state = ENGINE_FINISH;
-				}
-				else
-				{
-					state = ENGINE_UPDATE;
-				}
+				state = ENGINE_FINISH;
 			}
-			break;
-
-			case ENGINE_UPDATE:
+			else
 			{
-				update_status update_return = App->Update();
-
-				if (update_return == update_status::UPDATE_STOP) 
-				{
-					state = ENGINE_FINISH;
-				}
+				state = ENGINE_UPDATE;
 			}
-			break;
+		}
+		break;
 
-			case ENGINE_FINISH: 
+		case ENGINE_UPDATE:
+		{
+			update_status update_return = App->Update();
+
+			if (update_return == update_status::UPDATE_STOP)
 			{
-				App->Delete();
-
-				state = ENGINE_EXIT;
+				state = ENGINE_FINISH;
 			}
-			break;
+		}
+		break;
+
+		case ENGINE_FINISH:
+		{
+			App->Delete();
+
+			state = ENGINE_EXIT;
+		}
+		break;
 		}
 	}
 

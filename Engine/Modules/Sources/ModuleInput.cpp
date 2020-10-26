@@ -1,6 +1,6 @@
 #include "Modules/Includes/ModuleInput.h"
 
-#include "Application.h"
+#include "Core/Application.h"
 #include "Modules/Includes/ModuleWindow.h"
 
 #include <Windows.h>

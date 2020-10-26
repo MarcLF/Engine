@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Globals.h"
+#include "Core/Globals.h"
 #include "Module.h"
 
 class ModuleInput : public Module

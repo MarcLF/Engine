@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Globals.h"
+#include "Core/Globals.h"
 #include "Module.h"
 
 #include <vector>
@@ -8,7 +8,7 @@
 #include <Glad/glad.h>
 #include <GLFW/glfw3.h>
 
-class ModuleShader;
+class Shader;
 
 class ModuleOpenGLTests : public Module
 {
@@ -29,6 +29,6 @@ private:
 	unsigned int EBO;
 	unsigned int shaderProgram;
 
-	ModuleShader* mainShader;
+	Shader* mainShader;
 };
 
