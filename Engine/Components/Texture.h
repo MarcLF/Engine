@@ -9,7 +9,7 @@ public:
 	Texture();
 	~Texture();
 
-	void LoadTexture(std::string texturePath);
+	void LoadTexture(std::string texturePath, bool hasAlpha);
 
 	unsigned int GetTexture() const;
 

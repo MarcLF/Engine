@@ -13,6 +13,7 @@ ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
 
 	mainShader = new Shader();
 	containerTexture = new Texture();
+	awesomefaceTexture = new Texture();
 }
 
 ModuleOpenGLTests::~ModuleOpenGLTests()
@@ -26,9 +27,10 @@ bool ModuleOpenGLTests::Init()
 	mainShader->LoadShader("Shaders/vertex_shader.vert", "Shaders/fragment_shader.frag");
 	mainShader->CompileShader();
 
-	containerTexture->LoadTexture("Assets/Textures/container.jpg");
+	containerTexture->LoadTexture("Assets/Textures/container.jpg", false);
+	awesomefaceTexture->LoadTexture("Assets/Textures/awesomeface.png", true);
 
-	CreateTriangle();
+	CreateRectangle();
 
 	return ret;
 }
@@ -49,7 +51,7 @@ bool ModuleOpenGLTests::Delete()
 	return true;
 }
 
-void ModuleOpenGLTests::CreateTriangle()
+void ModuleOpenGLTests::CreateRectangle()
 {
 	float vertices[] = {
 		// positions          // colors           // texture coords
@@ -95,6 +97,10 @@ void ModuleOpenGLTests::CreateTriangle()
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
+
+	mainShader->Use();
+	mainShader->SetInt("texture1", 0);
+	mainShader->SetInt("texture2", 1);
 }
 
 void ModuleOpenGLTests::Draw()
@@ -104,7 +110,11 @@ void ModuleOpenGLTests::Draw()
 
 	mainShader->Use();
 
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, containerTexture->GetTexture());
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, awesomefaceTexture->GetTexture());
+
 	// Binding VAO also binds his EBO
 	glBindVertexArray(VAO);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);

@@ -21,7 +21,7 @@ public:
 	update_status Update() override;
 	bool Delete() override;
 
-	void CreateTriangle();
+	void CreateRectangle();
 	void Draw();
 
 private:
@@ -32,5 +32,6 @@ private:
 
 	Shader* mainShader;
 	Texture* containerTexture;
+	Texture* awesomefaceTexture;
 };
 
