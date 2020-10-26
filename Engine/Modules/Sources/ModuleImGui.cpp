@@ -2,7 +2,6 @@
 
 #include "Core/Application.h"
 #include "Modules/Includes/ModuleWindow.h"
-#include "Modules/Includes/ModuleTraceSystem.h"
 
 #include "ImGui/imgui.h"
 

@@ -134,6 +134,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Components\Shader.cpp" />
+    <ClCompile Include="Components\Texture.cpp" />
     <ClCompile Include="Core\Application.cpp" />
     <ClCompile Include="Core\Globals.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />
@@ -146,12 +147,13 @@
     <ClCompile Include="Modules\Sources\ModuleImGui.cpp" />
     <ClCompile Include="Modules\Sources\ModuleInput.cpp" />
     <ClCompile Include="Modules\Sources\ModuleOpenGLTests.cpp" />
-    <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp" />
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp" />
-    <ClCompile Include="OpenGL\glad.c" />
+    <ClCompile Include="ThirdParty\OpenGL\glad.c" />
+    <ClCompile Include="Utils\TraceSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\Shader.h" />
+    <ClInclude Include="Components\Texture.h" />
     <ClInclude Include="Core\Application.h" />
     <ClInclude Include="Core\Globals.h" />
     <ClInclude Include="ImGui\imconfig.h" />
@@ -166,8 +168,9 @@
     <ClInclude Include="Modules\Includes\ModuleImGui.h" />
     <ClInclude Include="Modules\Includes\ModuleInput.h" />
     <ClInclude Include="Modules\Includes\ModuleOpenGLTests.h" />
-    <ClInclude Include="Modules\Includes\ModuleTraceSystem.h" />
     <ClInclude Include="Modules\Includes\ModuleWindow.h" />
+    <ClInclude Include="ThirdParty\stb\stb_image.h" />
+    <ClInclude Include="Utils\TraceSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\fragment_shader.frag" />

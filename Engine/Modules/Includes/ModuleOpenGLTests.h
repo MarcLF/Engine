@@ -9,6 +9,7 @@
 #include <GLFW/glfw3.h>
 
 class Shader;
+class Texture;
 
 class ModuleOpenGLTests : public Module
 {
@@ -30,5 +31,6 @@ private:
 	unsigned int shaderProgram;
 
 	Shader* mainShader;
+	Texture* containerTexture;
 };
 

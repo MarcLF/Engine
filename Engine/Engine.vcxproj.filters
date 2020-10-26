@@ -28,9 +28,6 @@
     <Filter Include="Source Files\ImGui">
       <UniqueIdentifier>{79c3ec94-30d9-47a8-8d6a-c165c3cc6d7b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\OpenGL">
-      <UniqueIdentifier>{3007ad17-dde7-43ec-91cb-7ff1c750873b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Core">
       <UniqueIdentifier>{480baa65-00dc-45d0-bc06-73e3e6afb596}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,21 @@
     </Filter>
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{3f736824-82d8-4523-8a34-5325d157d844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{2c7cdedd-bf97-4a0a-becf-0ca1a41e03fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{49390d33-ce55-46ff-846b-96fdcc385245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{897c3c24-9dc5-4715-8b15-e6721d1edc75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\OpenGL">
+      <UniqueIdentifier>{1bf6df87-c8ba-48d9-ade9-4e69ec3bd7c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\stb">
+      <UniqueIdentifier>{9d736b4c-6efc-4e33-8bd9-64dcf5ea31eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,12 +90,6 @@
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Modules\Sources\ModuleTraceSystem.cpp">
-      <Filter>Source Files\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="OpenGL\glad.c">
-      <Filter>Source Files\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Application.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
@@ -92,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="Components\Shader.cpp">
       <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\TraceSystem.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Texture.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdParty\OpenGL\glad.c">
+      <Filter>ThirdParty\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +149,6 @@
     <ClInclude Include="Modules\Includes\ModuleWindow.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Modules\Includes\ModuleTraceSystem.h">
-      <Filter>Header Files\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Application.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
@@ -145,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="Components\Shader.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\TraceSystem.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Texture.h">
+      <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\stb\stb_image.h">
+      <Filter>ThirdParty\stb</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

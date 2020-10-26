@@ -1,6 +1,5 @@
 #include "Core/Application.h"
 
-#include "Modules/Includes/ModuleTraceSystem.h"
 #include "Modules/Includes/ModuleWindow.h"
 #include "Modules/Includes/ModuleInput.h"
 #include "Modules/Includes/ModuleOpenGLTests.h"
@@ -8,7 +7,6 @@
 
 Application::Application()
 {
-	modules.push_back(traceSystem = new ModuleTraceSystem());
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(input = new ModuleInput());
 	modules.push_back(openGLTests = new ModuleOpenGLTests());

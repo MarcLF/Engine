@@ -3,7 +3,6 @@
 #include <list>
 #include "Modules/Includes/Module.h"
 
-class ModuleTraceSystem;
 class ModuleWindow;
 class ModuleInput;
 class ModuleOpenGLTests;
@@ -25,7 +24,6 @@ private:
 	std::list<Module*> modules;
 
 public:
-	ModuleTraceSystem* traceSystem = nullptr;
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
