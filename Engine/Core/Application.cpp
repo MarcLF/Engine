@@ -2,6 +2,7 @@
 
 #include "Modules/Includes/ModuleWindow.h"
 #include "Modules/Includes/ModuleInput.h"
+#include "Modules/Includes/ModuleCamera.h"
 #include "Modules/Includes/ModuleOpenGLTests.h"
 #include "Modules/Includes/ModuleImGui.h"
 
@@ -9,6 +10,7 @@ Application::Application()
 {
 	modules.push_back(window = new ModuleWindow());
 	modules.push_back(input = new ModuleInput());
+	modules.push_back(camera = new ModuleCamera());
 	modules.push_back(openGLTests = new ModuleOpenGLTests());
 	modules.push_back(imgui = new ModuleImGui());
 }

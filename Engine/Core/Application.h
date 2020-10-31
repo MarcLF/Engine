@@ -5,6 +5,7 @@
 
 class ModuleWindow;
 class ModuleInput;
+class ModuleCamera;
 class ModuleOpenGLTests;
 class ModuleImGui;
 
@@ -26,6 +27,7 @@ private:
 public:
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
+	ModuleCamera* camera = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
 	ModuleImGui* imgui = nullptr;
 };

@@ -3,6 +3,10 @@
 #include <glad/glad.h>
 #include <string>
 
+#include <ThirdParty/glm/glm.hpp>
+#include <ThirdParty/glm/gtc/matrix_transform.hpp>
+#include <ThirdParty/glm/gtc/type_ptr.hpp>
+
 class Shader
 {
 public:
@@ -17,6 +21,8 @@ public:
 	void SetBool(const std::string& name, bool value) const;
 	void SetInt(const std::string& name, int value) const;
 	void SetFloat(const std::string& name, float value) const;
+
+	void SetMat4(const std::string& name, bool is_transpose, glm::mat4 value) const;
 
 	unsigned int GetProgramID() const;
 
