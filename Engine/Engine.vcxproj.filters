@@ -111,6 +111,9 @@
     <ClCompile Include="Modules\Sources\ModuleCamera.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Components\ComponentCamera.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImGui\imconfig.h">
@@ -172,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="Modules\Includes\ModuleCamera.h">
       <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\ComponentCamera.h">
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

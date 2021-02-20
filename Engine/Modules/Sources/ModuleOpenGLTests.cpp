@@ -14,6 +14,10 @@ ModuleOpenGLTests::ModuleOpenGLTests() : Module("ModuleOpenGLTests")
 	mainShader = new Shader();
 	containerTexture = new Texture();
 	awesomefaceTexture = new Texture();
+
+	proj = glm::mat4();
+	view = glm::mat4();
+	model = glm::mat4();
 }
 
 ModuleOpenGLTests::~ModuleOpenGLTests()

@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Components\ComponentCamera.cpp" />
     <ClCompile Include="Components\Shader.cpp" />
     <ClCompile Include="Components\Texture.cpp" />
     <ClCompile Include="Core\Application.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Utils\TraceSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components\ComponentCamera.h" />
     <ClInclude Include="Components\Shader.h" />
     <ClInclude Include="Components\Texture.h" />
     <ClInclude Include="Core\Application.h" />
