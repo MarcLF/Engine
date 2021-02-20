@@ -35,7 +35,7 @@ bool ModuleImGui::Init()
 	return true;
 }
 
-update_status ModuleImGui::Update()
+update_status ModuleImGui::Update(float deltaTime)
 {
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplGlfw_NewFrame();

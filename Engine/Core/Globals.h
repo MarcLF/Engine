@@ -6,6 +6,8 @@
 #include "ImGui/imgui_impl_glfw.h"
 #include "ImGui/imgui_impl_opengl3.h"
 
+#include <iostream>
+
 enum class update_status
 {
 	UPDATE_CONTINUE = 1,

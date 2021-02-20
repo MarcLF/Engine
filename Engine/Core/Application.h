@@ -21,15 +21,19 @@ public:
 
 	virtual bool Delete();
 
-private:
-	std::list<Module*> modules;
-
 public:
 	ModuleWindow* window = nullptr;
 	ModuleInput* input = nullptr;
 	ModuleCamera* camera = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
 	ModuleImGui* imgui = nullptr;
+
+private:
+	std::list<Module*> modules;
+
+	float currentFrame;
+	float lastFrame;
+	float deltaTime;
 };
 
 extern Application* App;

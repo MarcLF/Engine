@@ -18,7 +18,7 @@ update_status Module::PreUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-update_status Module::Update()
+update_status Module::Update(float deltaTime)
 {
 	return update_status::UPDATE_CONTINUE;
 }

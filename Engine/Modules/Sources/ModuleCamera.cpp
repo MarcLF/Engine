@@ -1,5 +1,5 @@
-#include "Modules\Includes\ModuleCamera.h"
-#include "Components\ComponentCamera.h"
+#include "Modules/Includes/ModuleCamera.h"
+#include "Components/ComponentCamera.h"
 
 ModuleCamera::ModuleCamera() : Module("ModuleCamera")
 {
@@ -15,9 +15,8 @@ bool ModuleCamera::Init()
 	return true;
 }
 
-update_status ModuleCamera::Update()
+update_status ModuleCamera::Update(float deltaTime)
 {
-
 	return update_status::UPDATE_CONTINUE;
 }
 

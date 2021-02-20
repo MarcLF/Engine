@@ -14,8 +14,10 @@ public:
 	~ModuleWindow() override;
 
 	bool Init() override;
-	update_status Update() override;
+	update_status Update(float deltaTime) override;
 	bool Delete() override;
+
+	void ProcessInput(float deltaTime);
 
 	GLFWwindow* GetWindow() const;
 

@@ -1,5 +1,9 @@
 #include "Modules/Includes/ModuleWindow.h"
 
+#include "Core/Application.h"
+#include "Modules/Includes/ModuleCamera.h"
+#include "Components/ComponentCamera.h"
+
 #include <Windows.h>
 
 ModuleWindow::ModuleWindow() : Module("ModuleWindow")
@@ -44,7 +48,7 @@ bool ModuleWindow::Init()
 	return ret;
 }
 
-update_status ModuleWindow::Update()
+update_status ModuleWindow::Update(float deltaTime)
 {
 	if (glfwWindowShouldClose(window))
 	{
@@ -52,6 +56,8 @@ update_status ModuleWindow::Update()
 
 		return update_status::UPDATE_STOP;
 	}
+
+	ProcessInput(deltaTime);
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
@@ -64,6 +70,18 @@ bool ModuleWindow::Delete()
 	glfwTerminate();
 
 	return true;
+}
+
+void ModuleWindow::ProcessInput(float deltaTime)
+{
+	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+		App->camera->GetCamera()->ProcessKeyboard(camera_movement::FORWARD, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+		App->camera->GetCamera()->ProcessKeyboard(camera_movement::BACKWARD, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+		App->camera->GetCamera()->ProcessKeyboard(camera_movement::LEFT, deltaTime);
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		App->camera->GetCamera()->ProcessKeyboard(camera_movement::RIGHT, deltaTime);
 }
 
 GLFWwindow* ModuleWindow::GetWindow() const

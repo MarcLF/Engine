@@ -11,7 +11,7 @@ public:
 	~ModuleImGui();
 
 	bool Init() override;
-	update_status Update() override;
+	update_status Update(float deltaTime) override;
 	bool Delete() override;
 
 private:

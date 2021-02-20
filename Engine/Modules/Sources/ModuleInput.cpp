@@ -21,7 +21,7 @@ bool ModuleInput::Init()
 	return ret;
 }
 
-update_status ModuleInput::Update()
+update_status ModuleInput::Update(float deltaTime)
 {
 	return update_status::UPDATE_CONTINUE;
 }

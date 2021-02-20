@@ -12,7 +12,7 @@ public:
 	virtual bool Init();
 
 	virtual update_status PreUpdate();
-	virtual update_status Update();
+	virtual update_status Update(float deltaTime = 0);
 	virtual update_status PostUpdate();
 
 	virtual bool Delete();

@@ -1,12 +1,14 @@
-#include "Components\ComponentCamera.h"
+#include "Components/ComponentCamera.h"
+
+#include "Core/Globals.h"
 
 ComponentCamera::ComponentCamera(glm::vec3 position_, glm::vec3 up_, float yaw_, float pitch_) :
 	front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), zoom(ZOOM)
 {
-	position = position;
-	worldUp = up;
-	yaw = yaw;
-	pitch = pitch;
+	position = position_;
+	worldUp = up_;
+	yaw = yaw_;
+	pitch = pitch_;
 	updateCameraVectors();
 }
 
