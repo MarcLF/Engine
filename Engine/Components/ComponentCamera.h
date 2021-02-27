@@ -39,6 +39,10 @@ public:
 	void ProcessMouseScroll(float yoffset);
 	void ProcessMouse(double mouseLastXPos, double mouseLastYPos);
 
+	void MouseRightClickReleased();
+
+	float GetCameraFoV();
+
 private:
 	void updateCameraVectors();
 
@@ -57,9 +61,9 @@ private:
 	// camera options
 	float movementSpeed;
 	float mouseSensitivity;
-	float zoom;
+	float fov;
 
-	bool firstMouse;
+	bool isFirstClick;
 
 	float mouseLastXPos;
 	float mouseLastYPos;

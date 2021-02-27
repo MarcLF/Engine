@@ -3,7 +3,7 @@
 #include "Core/Globals.h"
 
 ComponentCamera::ComponentCamera(glm::vec3 position_, glm::vec3 up_, float yaw_, float pitch_) :
-	front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), zoom(ZOOM)
+	front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(ZOOM)
 {
 	position = position_;
 	worldUp = up_;
@@ -14,11 +14,11 @@ ComponentCamera::ComponentCamera(glm::vec3 position_, glm::vec3 up_, float yaw_,
 	mouseLastXPos = 0;
 	mouseLastYPos = 0;
 
-	firstMouse = true;
+	isFirstClick = true;
 }
 
 ComponentCamera::ComponentCamera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw_, float pitch_) :
-	front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), zoom(ZOOM)
+	front(glm::vec3(0.0f, 0.0f, -1.0f)), movementSpeed(SPEED), mouseSensitivity(SENSITIVITY), fov(ZOOM)
 {
 	position = glm::vec3(posX, posY, posZ);
 	worldUp = glm::vec3(upX, upY, upZ);
@@ -90,20 +90,21 @@ void ComponentCamera::ProcessMouseMovement(float xoffset, float yoffset, GLboole
 // processes input received from a mouse scroll-wheel event. Only requires input on the vertical wheel-axis
 void ComponentCamera::ProcessMouseScroll(float yoffset)
 {
-	zoom -= (float)yoffset;
-	if (zoom < 1.0f)
-		zoom = 1.0f;
-	if (zoom > 45.0f)
-		zoom = 45.0f;
+	fov -= (float)yoffset;
+
+	if (fov < 1.0f)
+		fov = 1.0f;
+	else if (fov > 45.0f)
+		fov = 45.0f;
 }
 
 void ComponentCamera::ProcessMouse(double mouseXPos, double mouseYPos)
 {
-	if (firstMouse)
+	if (isFirstClick)
 	{
 		mouseLastXPos = mouseXPos;
 		mouseLastYPos = mouseYPos;
-		firstMouse = false;
+		isFirstClick = false;
 	}
 
 	float xoffset = mouseXPos - mouseLastXPos;
@@ -131,6 +132,16 @@ void ComponentCamera::ProcessMouse(double mouseXPos, double mouseYPos)
 	front = glm::normalize(direction);
 
 	updateCameraVectors();
+}
+
+void ComponentCamera::MouseRightClickReleased()
+{
+	isFirstClick = true;
+}
+
+float ComponentCamera::GetCameraFoV()
+{
+	return fov;
 }
 
 void ComponentCamera::updateCameraVectors()

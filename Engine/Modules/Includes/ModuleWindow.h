@@ -18,7 +18,6 @@ public:
 	bool Delete() override;
 
 	void ProcessInput(float deltaTime);
-	void MouseCallback(double mouseXPos, double mouseYPos);
 
 	GLFWwindow* GetWindow() const;
 

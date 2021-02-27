@@ -6,7 +6,9 @@
 
 #include <Windows.h>
 
-void mouse_callback_wrapper(GLFWwindow* window, double mouseXPos, double mouseYPos);
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+void mouse_callback(GLFWwindow* window, double mouseXPos, double mouseYPos);
+void scroll_callback(GLFWwindow* window, double xOffset, double yOffset);
 
 ModuleWindow::ModuleWindow() : Module("ModuleWindow")
 {
@@ -50,9 +52,8 @@ bool ModuleWindow::Init()
 		glViewport(0, 0, width, height);
 	});
 
-	glfwSetWindowUserPointer(window, reinterpret_cast<void*>(this));
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	glfwSetCursorPosCallback(window, mouse_callback_wrapper);
+	glfwSetMouseButtonCallback(window, mouse_button_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 
 	return ret;
 }
@@ -97,20 +98,34 @@ void ModuleWindow::ProcessInput(float deltaTime)
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::DOWN, deltaTime);
 }
 
-void mouse_callback_wrapper(GLFWwindow* window, double mouseXPos, double mouseYPos)
-{
-	ModuleWindow* wind = reinterpret_cast<ModuleWindow*>(glfwGetWindowUserPointer(window));
-	wind->MouseCallback(mouseXPos, mouseYPos);
-}
-
-void ModuleWindow::MouseCallback(double mouseXPos, double mouseYPos)
-{
-	App->camera->GetCamera()->ProcessMouse(mouseXPos, mouseYPos);
-}
-
 GLFWwindow* ModuleWindow::GetWindow() const
 {
 	OutputDebugString(__FUNCSIG__ "\n");
 
 	return window;
+}
+
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+	if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_PRESS)
+	{
+		glfwSetCursorPosCallback(window, mouse_callback);
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	}
+	else if (button == GLFW_MOUSE_BUTTON_RIGHT && action == GLFW_RELEASE)
+	{
+		glfwSetCursorPosCallback(window, NULL);
+		glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+		App->camera->GetCamera()->MouseRightClickReleased();
+	}
+}
+
+void mouse_callback(GLFWwindow* window, double mouseXPos, double mouseYPos)
+{
+	App->camera->GetCamera()->ProcessMouse(mouseXPos, mouseYPos);
+}
+
+void scroll_callback(GLFWwindow* window, double xOffset, double yOffset)
+{
+	App->camera->GetCamera()->ProcessMouseScroll(yOffset);
 }

@@ -44,13 +44,10 @@ bool ModuleOpenGLTests::Init()
 	CreateCube();
 	CreateCubes();
 
-	proj = glm::mat4(1.0f);
-	proj = glm::perspective(glm::radians(45.0f), (float)1000.0f / (float)700.0f, 0.1f, 100.0f);
+	float fov = App->camera->GetCamera()->GetCameraFoV();
+	proj = glm::perspective(glm::radians(fov), (float)1000.0f / (float)700.0f, 0.1f, 100.0f);
 
 	view = App->camera->GetCamera()->GetViewMatrix();
-
-	glm::mat4 projection;
-	projection = glm::perspective(glm::radians(45.0f), 1000.0f / 700.0f, 0.1f, 100.0f);
 
 	return ret;
 }
@@ -164,7 +161,8 @@ void ModuleOpenGLTests::Draw()
 
 	mainShader->Use();
 
-	proj = glm::perspective(glm::radians(45.0f), (float)1000.0f / (float)700.0f, 0.1f, 100.0f);
+	float fov = App->camera->GetCamera()->GetCameraFoV();
+	proj = glm::perspective(glm::radians(fov), (float)1000.0f / (float)700.0f, 0.1f, 100.0f);
 
 	view = App->camera->GetCamera()->GetViewMatrix();
 
