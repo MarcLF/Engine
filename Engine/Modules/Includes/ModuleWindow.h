@@ -18,10 +18,14 @@ public:
 	bool Delete() override;
 
 	void ProcessInput(float deltaTime);
+	void MouseCallback(double mouseXPos, double mouseYPos);
 
 	GLFWwindow* GetWindow() const;
 
 private:
 	GLFWwindow* window;
+
+	unsigned int screenSizeWidth;
+	unsigned int screenSizeHeight;
 };
 

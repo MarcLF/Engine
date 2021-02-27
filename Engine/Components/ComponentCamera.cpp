@@ -10,6 +10,11 @@ ComponentCamera::ComponentCamera(glm::vec3 position_, glm::vec3 up_, float yaw_,
 	yaw = yaw_;
 	pitch = pitch_;
 	updateCameraVectors();
+
+	mouseLastXPos = 0;
+	mouseLastYPos = 0;
+
+	firstMouse = true;
 }
 
 ComponentCamera::ComponentCamera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw_, float pitch_) :
@@ -90,6 +95,39 @@ void ComponentCamera::ProcessMouseScroll(float yoffset)
 		zoom = 1.0f;
 	if (zoom > 45.0f)
 		zoom = 45.0f;
+}
+
+void ComponentCamera::ProcessMouse(double mouseXPos, double mouseYPos)
+{
+	if (firstMouse)
+	{
+		mouseLastXPos = mouseXPos;
+		mouseLastYPos = mouseYPos;
+		firstMouse = false;
+	}
+
+	float xoffset = mouseXPos - mouseLastXPos;
+	float yoffset = mouseLastYPos - mouseYPos;
+	mouseLastXPos = mouseXPos;
+	mouseLastYPos = mouseYPos;
+
+	float sensitivity = 0.1f;
+	xoffset *= sensitivity;
+	yoffset *= sensitivity;
+
+	yaw += xoffset;
+	pitch += yoffset;
+
+	if (pitch > 89.0f)
+		pitch = 89.0f;
+	if (pitch < -89.0f)
+		pitch = -89.0f;
+
+	glm::vec3 direction;
+	direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+	direction.y = sin(glm::radians(pitch));
+	direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+	front = glm::normalize(direction);
 }
 
 void ComponentCamera::updateCameraVectors()

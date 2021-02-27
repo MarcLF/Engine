@@ -6,9 +6,14 @@
 
 #include <Windows.h>
 
+void mouse_callback_wrapper(GLFWwindow* window, double mouseXPos, double mouseYPos);
+
 ModuleWindow::ModuleWindow() : Module("ModuleWindow")
 {
 	window = nullptr;
+
+	screenSizeWidth = 1000;
+	screenSizeHeight = 700;
 }
 
 ModuleWindow::~ModuleWindow()
@@ -26,7 +31,7 @@ bool ModuleWindow::Init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(1000, 700, "Game Engine", NULL, NULL);
+	window = glfwCreateWindow(screenSizeWidth, screenSizeHeight, "Game Engine", NULL, NULL);
 
 	assert(window != nullptr && "Failed to create GLFW window \n");
 
@@ -38,12 +43,16 @@ bool ModuleWindow::Init()
 		ret = false;
 	}
 
-	glViewport(0, 0, 800, 600);
+	glViewport(0, 0, screenSizeWidth, screenSizeHeight);
 
 	glfwSetFramebufferSizeCallback(window, [](GLFWwindow* window, int width, int height)
 	{
 		glViewport(0, 0, width, height);
 	});
+
+	glfwSetWindowUserPointer(window, reinterpret_cast<void*>(this));
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	glfwSetCursorPosCallback(window, mouse_callback_wrapper);
 
 	return ret;
 }
@@ -86,6 +95,17 @@ void ModuleWindow::ProcessInput(float deltaTime)
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::UP, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::DOWN, deltaTime);
+}
+
+void mouse_callback_wrapper(GLFWwindow* window, double mouseXPos, double mouseYPos)
+{
+	ModuleWindow* wind = reinterpret_cast<ModuleWindow*>(glfwGetWindowUserPointer(window));
+	wind->MouseCallback(mouseXPos, mouseYPos);
+}
+
+void ModuleWindow::MouseCallback(double mouseXPos, double mouseYPos)
+{
+	App->camera->GetCamera()->ProcessMouse(mouseXPos, mouseYPos);
 }
 
 GLFWwindow* ModuleWindow::GetWindow() const
