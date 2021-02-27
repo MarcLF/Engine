@@ -85,17 +85,29 @@ bool ModuleWindow::Delete()
 void ModuleWindow::ProcessInput(float deltaTime)
 {
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::FORWARD, deltaTime);
+	}
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::BACKWARD, deltaTime);
+	}
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::LEFT, deltaTime);
+	}
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::RIGHT, deltaTime);
+	}
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::UP, deltaTime);
+	}
 	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS)
+	{
 		App->camera->GetCamera()->ProcessKeyboard(camera_movement::DOWN, deltaTime);
+	}
 }
 
 GLFWwindow* ModuleWindow::GetWindow() const

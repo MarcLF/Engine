@@ -81,9 +81,6 @@
     <ClCompile Include="Modules\Sources\ModuleImGui.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Modules\Sources\ModuleInput.cpp">
-      <Filter>Source Files\Modules</Filter>
-    </ClCompile>
     <ClCompile Include="Modules\Sources\ModuleOpenGLTests.cpp">
       <Filter>Source Files\Modules</Filter>
     </ClCompile>
@@ -113,6 +110,12 @@
     </ClCompile>
     <ClCompile Include="Components\ComponentCamera.cpp">
       <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Sources\ModuleScene.cpp">
+      <Filter>Source Files\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Sources\ModuleRenderer.cpp">
+      <Filter>Source Files\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,9 +149,6 @@
     <ClInclude Include="Modules\Includes\ModuleImGui.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Modules\Includes\ModuleInput.h">
-      <Filter>Header Files\Modules</Filter>
-    </ClInclude>
     <ClInclude Include="Modules\Includes\ModuleOpenGLTests.h">
       <Filter>Header Files\Modules</Filter>
     </ClInclude>
@@ -178,6 +178,12 @@
     </ClInclude>
     <ClInclude Include="Components\ComponentCamera.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Includes\ModuleScene.h">
+      <Filter>Header Files\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Includes\ModuleRenderer.h">
+      <Filter>Header Files\Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

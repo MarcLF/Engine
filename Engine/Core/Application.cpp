@@ -1,16 +1,18 @@
 #include "Core/Application.h"
 
 #include "Modules/Includes/ModuleWindow.h"
-#include "Modules/Includes/ModuleInput.h"
+#include "Modules/Includes/ModuleScene.h"
 #include "Modules/Includes/ModuleCamera.h"
+#include "Modules/Includes/ModuleRenderer.h"
 #include "Modules/Includes/ModuleOpenGLTests.h"
 #include "Modules/Includes/ModuleImGui.h"
 
 Application::Application()
 {
 	modules.push_back(window = new ModuleWindow());
-	modules.push_back(input = new ModuleInput());
+	modules.push_back(input = new ModuleScene());
 	modules.push_back(camera = new ModuleCamera());
+	modules.push_back(renderer = new ModuleRenderer());
 	modules.push_back(openGLTests = new ModuleOpenGLTests());
 	modules.push_back(imgui = new ModuleImGui());
 

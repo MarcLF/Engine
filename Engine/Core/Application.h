@@ -4,8 +4,9 @@
 #include "Modules/Includes/Module.h"
 
 class ModuleWindow;
-class ModuleInput;
+class ModuleScene;
 class ModuleCamera;
+class ModuleRenderer;
 class ModuleOpenGLTests;
 class ModuleImGui;
 
@@ -23,8 +24,9 @@ public:
 
 public:
 	ModuleWindow* window = nullptr;
-	ModuleInput* input = nullptr;
+	ModuleScene* input = nullptr;
 	ModuleCamera* camera = nullptr;
+	ModuleRenderer* renderer = nullptr;
 	ModuleOpenGLTests* openGLTests = nullptr;
 	ModuleImGui* imgui = nullptr;
 

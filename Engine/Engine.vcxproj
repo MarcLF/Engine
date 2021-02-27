@@ -147,7 +147,8 @@
     <ClCompile Include="Modules\Sources\Module.cpp" />
     <ClCompile Include="Modules\Sources\ModuleCamera.cpp" />
     <ClCompile Include="Modules\Sources\ModuleImGui.cpp" />
-    <ClCompile Include="Modules\Sources\ModuleInput.cpp" />
+    <ClCompile Include="Modules\Sources\ModuleRenderer.cpp" />
+    <ClCompile Include="Modules\Sources\ModuleScene.cpp" />
     <ClCompile Include="Modules\Sources\ModuleOpenGLTests.cpp" />
     <ClCompile Include="Modules\Sources\ModuleWindow.cpp" />
     <ClCompile Include="ThirdParty\OpenGL\glad.c" />
@@ -170,7 +171,8 @@
     <ClInclude Include="Modules\Includes\Module.h" />
     <ClInclude Include="Modules\Includes\ModuleCamera.h" />
     <ClInclude Include="Modules\Includes\ModuleImGui.h" />
-    <ClInclude Include="Modules\Includes\ModuleInput.h" />
+    <ClInclude Include="Modules\Includes\ModuleRenderer.h" />
+    <ClInclude Include="Modules\Includes\ModuleScene.h" />
     <ClInclude Include="Modules\Includes\ModuleOpenGLTests.h" />
     <ClInclude Include="Modules\Includes\ModuleWindow.h" />
     <ClInclude Include="ThirdParty\stb\stb_image.h" />

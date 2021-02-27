@@ -1,13 +1,12 @@
 #pragma once
 
-#include "Core/Globals.h"
 #include "Module.h"
 
-class ModuleInput : public Module
+class ModuleRenderer : public Module
 {
 public:
-	ModuleInput();
-	~ModuleInput();
+	ModuleRenderer();
+	~ModuleRenderer();
 
 	bool Init() override;
 	update_status Update(float deltaTime) override;
